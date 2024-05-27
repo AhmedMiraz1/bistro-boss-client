@@ -4,11 +4,11 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
 
     const navLink = <>
-    <li><NavLink>HOME</NavLink></li>
-    <li><NavLink>CONTACT us</NavLink></li>
-    <li><NavLink>DASHBOARD</NavLink></li>
-    <li><NavLink to='/menu'>Our Menu</NavLink></li>
-    <li><NavLink>Our Shop</NavLink></li>
+    <li className="uppercase"><NavLink>HOME</NavLink></li>
+    <li className="uppercase"><NavLink>CONTACT us</NavLink></li>
+    <li className="uppercase"><NavLink>DASHBOARD</NavLink></li>
+    <li className="uppercase"><NavLink to='/menu'>Our Menu</NavLink></li>
+    <li className="uppercase"><NavLink to='/order'>Our Shop</NavLink></li>
     
     </>
     return (
@@ -28,8 +28,8 @@ const Navbar = () => {
             </div>
           </Link>
         </div>
-        <div className="navbar-end hidden lg:flex">
-          <ul className=" menu-horizontal px-1 gap-6">
+        <div className="navbar-center hidden lg:flex">
+          <ul className=" flex justify-between  gap-6">
             
             {navLink}
           </ul>
