@@ -40,8 +40,8 @@ const Menu = () => {
       <MenuCategory items={offered} />
 
       {/* dessert menu items  */}
-      <MenuCategory items={dessert} title={"Dessert"} Img={dessertImg} description={'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} />
-      <MenuCategory items={pizza} title={"Pizza"} Img={pizzaImg}  description={'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} />
+      <MenuCategory items={dessert} title={"dessert"} Img={dessertImg} description={'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} />
+      <MenuCategory items={pizza} title={"pizza"} Img={pizzaImg}  description={'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} />
 
       <MenuCategory items={salad} title={"salad"} Img={saladImg}  description={'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} />
       <MenuCategory items={soup} title={"soup"} Img={soupImg}  description={'Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} />
