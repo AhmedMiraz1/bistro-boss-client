@@ -4,9 +4,11 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { VscDiffRenamed } from "react-icons/vsc";
 import { CiLogout } from "react-icons/ci";
 import { BiCart } from "react-icons/bi";
+import useCart from "../../hooks/useCart";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [cart] = useCart();
 
   const navLink = (
     <>
@@ -17,7 +19,7 @@ const Navbar = () => {
         <NavLink>CONTACT us</NavLink>
       </li>
       <li className="uppercase">
-        <NavLink>DASHBOARD</NavLink>
+        <NavLink to='/dashboard'>DASHBOARD</NavLink>
       </li>
       <li className="uppercase">
         <NavLink to="/menu">Our Menu</NavLink>
@@ -64,11 +66,11 @@ const Navbar = () => {
         <ul className=" flex justify-between  gap-6">{navLink}</ul>
       </div>
       <div className="navbar-end">
-        <Link to='/ '>
-        <button className="flex  items-center" >
-          <BiCart className="mr-[2px] text-2xl"/>
-          <div className="badge badge-secondary">+0</div>
-        </button>
+        <Link to="/dashboard/cart">
+          <button className="flex  items-center">
+            <BiCart className="mr-[2px] text-2xl" />
+            <div className="badge badge-secondary"> + {cart?.length}</div>
+          </button>
         </Link>
         {user ? (
           <div className="dropdown dropdown-end">

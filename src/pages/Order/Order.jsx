@@ -4,7 +4,6 @@ import shopCover from "../../assets/shop/banner2.jpg";
 import Cover from "../shared/Cover";
 import { useState } from "react";
 import UseMenu from "../../hooks/UseMenu";
-import FoodCard from "../../components/FoodCard";
 import OrderTab from "./OrderTab";
 import { useParams } from "react-router-dom";
 
