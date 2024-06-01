@@ -1,20 +1,25 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../provider/AuthProvider";
-import { useContext } from "react";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import useAuth from "../../hooks/useAuth"
+import SocialLogin from "../shared/SocialLogin";
 
 const SignUp = () => {
-  const axiosPublic =useAxiosPublic()
+  
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm();
-  const {createUser, updateUserProfile}=useContext(AuthContext)
+  const {createUser, updateUserProfile,  }=useAuth()
   const navigate = useNavigate()
+  const axiosPublic =useAxiosPublic()
+
+  // const location = useLocation();
+
+  // const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
     console.log(data);
@@ -53,6 +58,30 @@ const SignUp = () => {
 
   };
 
+  // const handelGoogleSignUp = async () => {
+  //   try {
+  //     const result = await googleLogin();
+  //     console.log(result.user);
+
+  //     Swal.fire({
+  //       position: "top-end",
+  //       icon: "success",
+  //       title: "Login successfully",
+  //       showConfirmButton: false,
+  //       timer: 1500
+  //     });
+  //     navigate(from, { replace: true });
+  //   } catch (err) {
+  //     console.log(err);
+  //     Swal.fire({
+  //       icon: (err.message,  "error"),
+  //       title: "Oops...",
+  //       text: "Something went wrong!",
+        
+  //     });
+  //   }
+  // };
+
   return (
     <div className="w-full  p-4 mx-auto  my-[10%] rounded-md shadow-xl sm:p-8 text-purple-500 flex  flex-col md:flex-row justify-between gap-8 ">
       <div>
@@ -63,7 +92,10 @@ const SignUp = () => {
           <h2 className="mb-3 text-3xl font-semibold text-center">
             Sign Up to your account
           </h2>
-        </div>
+
+         <div>
+         <SocialLogin/>
+         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           <div className="space-y-4">
             <div className="space-y-2">
@@ -171,6 +203,7 @@ const SignUp = () => {
           </Link>
         </p>
       </div>
+    </div>
     </div>
   );
 };
