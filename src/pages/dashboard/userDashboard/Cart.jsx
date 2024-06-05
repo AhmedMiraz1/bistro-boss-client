@@ -1,7 +1,8 @@
 import Swal from "sweetalert2";
-import useCart from "../../hooks/useCart";
+import useCart from "../../../hooks/useCart";
 import { FaTrashAlt } from "react-icons/fa";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
@@ -39,16 +40,22 @@ const Cart = () => {
       <div className="uppercase flex justify-evenly mb-12">
         <h2 className="text-3xl">Total orders : {cart.length}</h2>
         <h2 className="text-3xl">Total price: {totalPrice}</h2>
-        <button className="btn bg-orange-500 text-white px-4 uppercase ">
-          pay
-        </button>
+        {
+          cart.length ?<Link to="/dashboard/payment">
+          <button  className="btn bg-orange-500 text-white px-4 uppercase ">
+            pay
+          </button>
+          </Link>: <button  disabled className="btn bg-orange-500 text-white px-4 uppercase ">
+            pay
+          </button>
+        }
       </div>
       <div className="overflow-x-auto border">
         <table className="table">
           {/* head */}
           <thead>
-            <tr>
-              <th>#</th>
+            <tr className="uppercase">
+              <th>no</th>
               <th>ITEM IMAGE</th>
               <th>ITEM NAME</th>
               <th>PRICE</th>

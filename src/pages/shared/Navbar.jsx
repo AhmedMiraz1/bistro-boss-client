@@ -5,9 +5,11 @@ import { VscDiffRenamed } from "react-icons/vsc";
 import { CiLogout } from "react-icons/ci";
 import { BiCart } from "react-icons/bi";
 import useCart from "../../hooks/useCart";
+import useAdmin from "../../hooks/useAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [isAdmin]=useAdmin()
   const [cart] = useCart();
 
   const navLink = (
@@ -18,15 +20,28 @@ const Navbar = () => {
       <li className="uppercase">
         <NavLink>CONTACT us</NavLink>
       </li>
-      <li className="uppercase">
+      {/* <li className="uppercase">
         <NavLink to='/dashboard'>DASHBOARD</NavLink>
-      </li>
+      </li> */}
+     
       <li className="uppercase">
         <NavLink to="/menu">Our Menu</NavLink>
       </li>
       <li className="uppercase">
         <NavLink to="/order/salad">Our Shop</NavLink>
       </li>
+{
+  user&& isAdmin &&  <li className="uppercase">
+  <NavLink to='/dashboard/admin-home'>DASHBOARD</NavLink>
+</li>
+
+}
+{
+  user&& !isAdmin &&  <li className="uppercase">
+  <NavLink to='/dashboard/user-home'>DASHBOARD</NavLink>
+  </li>
+}
+
     </>
   );
   return (

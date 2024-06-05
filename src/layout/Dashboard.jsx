@@ -20,14 +20,15 @@ const Dashboard = () => {
           {/* dashboard sidebar */}
           {
             isAdmin ? <>
+            {/* admin links */}
             <li>
-            <NavLink to="/dashboard/adminHome">
+            <NavLink to="/dashboard/admin-home">
                 <FaHome/>
               admin home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/addItems">
+            <NavLink to="/dashboard/add-items">
                 <FaUtensils/>
              Add items
             </NavLink>
@@ -54,9 +55,11 @@ const Dashboard = () => {
             
             
             </> :
+
+            // user links
             <>
             <li>
-            <NavLink to="/dashboard/userHome">
+            <NavLink to="/dashboard/user-home">
                 <FaHome/>
               User Home
             </NavLink>
@@ -68,7 +71,7 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard/payment">
+            <NavLink to="/dashboard/payment-history">
             <FaMoneyCheckDollar />
             Payment history
             </NavLink>
