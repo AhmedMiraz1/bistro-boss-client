@@ -1,4 +1,6 @@
-## live link :  https://bistro-boss-2072a.web.app
+## Bistro Boos 
+
+- live link :  https://bistro-boss-2072a.web.app
 
 - Authentication: Implemented email/password and Google authentication using Firebase for secure user login.
 - Frontend Development: Utilized React Router DOM for navigation, and designed a responsive navbar layout.
